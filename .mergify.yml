@@ -100,7 +100,7 @@ pull_request_rules:
         assignees: &BackportAssignee
           - "{{ merged_by|replace('mergify[bot]', label|select('equalto', 'community')|first|default(author)|replace('community', '@solana-labs/community-pr-subscribers')) }}"
         title: "{{ destination_branch }}: {{ title }} (backport of #{{ number }})"
-        ignore_conflicts: true
+        ignore_conflicts: false
         labels:
           - feature-gate
         branches:
